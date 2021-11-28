@@ -173,65 +173,74 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     int _souchikomitama = 0;
                     double _konkaikaitenritu = 0.0;
                     double _totalKaitenritu = 0.0;
+                    int _uchikomiTama = 0;
                     int _mochitama = 0;
 
-                    // 過去の情報の再計算
                     if (sumList.isEmpty) {
                       _startkaiten = int.parse(startKaitenTextEditing.text);
                       _endkaiten = int.parse(endKaitenTextEditing.text);
                       _konkaikaitensu = _endkaiten - _startkaiten;
                       _totalkaitensu = _konkaikaitensu;
-                      _uchikomitama = _uchikomitama +
+                      _uchikomiTama = _uchikomiTama +
                           int.parse(uchikomiTamaTextEditing.text);
-                      _souchikomitama = _uchikomitama;
+                      _souchikomitama = _uchikomiTama;
                       _konkaikaitenritu =
-                          (_konkaikaitensu / (_uchikomitama / 250)).toDouble();
+                          (_konkaikaitensu / (_uchikomiTama / 250)).toDouble();
                       _totalKaitenritu = _konkaikaitenritu;
                     } else {
+                      // 過去の情報の再計算
                       for (var i = 0; i < sumList.length; i++) {
                         // 開始・終了回転数
                         _startkaiten = int.parse(sumList[i].startKaiten);
                         _endkaiten = int.parse(sumList[i].endKaiten);
+                        if (sumList[i].jyoutai < 4) {
+                          //今回回転数
+                          _konkaikaitensu = (_endkaiten - _startkaiten);
+                          //累計通常回転数
+                          _totalkaitensu = _totalkaitensu + _konkaikaitensu;
+                          //打込み玉
+                          _uchikomitama = int.parse(sumList[i].uchikomiTama);
+                          //総打込み玉
+                          _souchikomitama = _souchikomitama +
+                              int.parse(sumList[i].uchikomiTama);
+                        } else {
+                          _konkaikaitensu = 0;
+                          _totalkaitensu = _totalkaitensu + _konkaikaitensu;
+                          _uchikomitama = 0;
+                        }
+                      }
+
+                      if (RegisterScreen.hozon < 4) {
                         //今回回転数
-                        _konkaikaitensu = (_endkaiten - _startkaiten);
-                        //累計通常回転数
-                        _totalkaitensu = _totalkaitensu + _konkaikaitensu;
-                        print('i: $i');
-                        print('_totalkaitensu: $_totalkaitensu');
-                        print('_konkaikaitensu: $_konkaikaitensu');
-                        //打込み玉
-                        _uchikomitama = int.parse(sumList[i].uchikomiTama);
+                        _konkaikaitensu = int.parse(endKaitenTextEditing.text) -
+                            int.parse(startKaitenTextEditing.text);
+                        //今回打込み玉
+                        _uchikomiTama = int.parse(uchikomiTamaTextEditing.text);
+                        //今回回転率
+                        _konkaikaitenritu =
+                            _konkaikaitensu / (_uchikomiTama / 250);
+                        //総回転数
+                        _totalkaitensu = _totalkaitensu +
+                            int.parse(endKaitenTextEditing.text) -
+                            int.parse(startKaitenTextEditing.text);
                         //総打込み玉
                         _souchikomitama = _souchikomitama +
-                            int.parse(sumList[i].uchikomiTama);
+                            int.parse(uchikomiTamaTextEditing.text);
+                        //今回回転率
+                        _konkaikaitenritu =
+                            (_konkaikaitensu / (_uchikomiTama / 250))
+                                .toDouble();
+                        //累計回転率
+                        _totalKaitenritu =
+                            (_totalkaitensu / (_souchikomitama / 250))
+                                .toDouble();
+                      } else {
+                        _konkaikaitensu = 0;
+                        _konkaikaitenritu = 0;
+                        _totalKaitenritu = 0;
+                        _totalkaitensu = 0;
+                        _uchikomiTama = 0;
                       }
-                      print('loop抜け_totalkaitensu: $_totalkaitensu');
-                      //今回回転数
-                      _konkaikaitensu = int.parse(endKaitenTextEditing.text) -
-                          int.parse(startKaitenTextEditing.text);
-                      //今回回転率
-                      _konkaikaitenritu = _konkaikaitensu /
-                          (int.parse(uchikomiTamaTextEditing.text) / 250);
-                      //総回転数
-                      print('_totalkaitensu: $_totalkaitensu');
-                      print(
-                          'endKaitenTextEditing.text: ${int.parse(endKaitenTextEditing.text)}');
-                      print(
-                          'startKaitenTextEditing.text: ${int.parse(startKaitenTextEditing.text)}');
-                      _totalkaitensu = _totalkaitensu +
-                          int.parse(endKaitenTextEditing.text) -
-                          int.parse(startKaitenTextEditing.text);
-                      //総打込み玉
-                      _souchikomitama = _souchikomitama +
-                          int.parse(uchikomiTamaTextEditing.text);
-                      //今回回転率
-                      _konkaikaitenritu =
-                          (_konkaikaitensu / (_uchikomitama / 250)).toDouble();
-                      //累計回転率
-                      print('_totalkaitensu: $_totalkaitensu');
-                      print('_souchikomitama: $_souchikomitama');
-                      _totalKaitenritu =
-                          (_totalkaitensu / (_souchikomitama / 250)).toDouble();
                     }
 
                     // 今回の情報の登録
@@ -242,10 +251,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       totalkaitensu: _totalkaitensu.toString(),
                       kaitenRitu: _konkaikaitenritu.toStringAsFixed(2),
                       totalkaitenRitu: _totalKaitenritu.toStringAsFixed(2),
-                      uchikomiTama: uchikomiTama,
+                      uchikomiTama: _uchikomiTama.toString(),
                       mochiTama: mochiTama,
                       jyoutai: RegisterScreen.hozon,
                     ));
+                    RegisterScreen.hozon = 0;
                     Navigator.pop(context);
                   }
                   ;

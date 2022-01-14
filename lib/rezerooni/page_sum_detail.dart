@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:uchikokun_free/gundumuc/edit_screen.dart';
-import 'package:uchikokun_free/gundumuc/status_info.dart';
 import 'package:uchikokun_free/common/sum_info.dart';
+import 'package:uchikokun_free/rezerooni/edit_screen.dart';
+import 'package:uchikokun_free/rezerooni/status_info.dart';
 
-class PageEditDetail extends StatefulWidget {
-  const PageEditDetail({Key? key}) : super(key: key);
+class PageSumDetail extends StatefulWidget {
+  const PageSumDetail({Key? key}) : super(key: key);
 
   @override
-  _PageEditDetailState createState() => _PageEditDetailState();
+  _PageSumDetailState createState() => _PageSumDetailState();
 }
 
-class _PageEditDetailState extends State<PageEditDetail> {
+class _PageSumDetailState extends State<PageSumDetail> {
   int? _value = 0;
-
   @override
   Widget build(BuildContext context) {
     if (sumList == null || sumList.isEmpty) {
@@ -20,7 +19,6 @@ class _PageEditDetailState extends State<PageEditDetail> {
         child: Text('データがありません。'),
       );
     }
-    //return (Text('テストデータ'));
     return Expanded(
       child: ListView.builder(
         itemCount: sumList.length,
@@ -28,15 +26,11 @@ class _PageEditDetailState extends State<PageEditDetail> {
           _value = sumList[index].jyoutai;
           return GestureDetector(
             onTap: () {
-              //TODO
-              print('GestureDetector tapped $index');
               Navigator.push(
                 this.context,
                 MaterialPageRoute(
                     fullscreenDialog: true,
-                    builder: (context) => EditScreen(
-                          index: index,
-                        )),
+                    builder: (context) => EditScreen(index: index)),
               ).then((value) {
                 // ここで画面遷移から戻ってきたことを検知できる
                 setState(() {});
@@ -50,13 +44,15 @@ class _PageEditDetailState extends State<PageEditDetail> {
                     children: [
                       Text(sumList[index].startKaiten),
                       Text(sumList[index].endKaiten),
-                      Text(sumList[index].uchikomiTama),
-                      Text(sumList[index].mochiTama),
+                      Text(sumList[index].kaitensu),
+                      Text(sumList[index].totalkaitensu),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
+                      Text(sumList[index].uchikomiTama),
+                      Text(sumList[index].mochiTama),
                       Text('${sumList[index].kaitenRitu}'),
                       Text('${sumList[index].totalkaitenRitu}'),
                     ],

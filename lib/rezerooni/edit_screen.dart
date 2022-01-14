@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:uchikokun_free/gundumuc/joutai_frame.dart';
 import 'package:uchikokun_free/common/sum_info.dart';
+import 'package:uchikokun_free/rezerooni/joutai_frame.dart';
 
 class EditScreen extends StatefulWidget {
   final int index;

@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:uchikokun_free/gundumuc/page_sum_detail.dart';
-import 'package:uchikokun_free/gundumuc/page_sum_header.dart';
 import 'package:uchikokun_free/common/page_sum_title.dart';
-import 'package:uchikokun_free/gundumuc/register_screen.dart';
+import 'package:uchikokun_free/rezerooni/page_sum_detail.dart';
+import 'package:uchikokun_free/rezerooni/page_sum_header.dart';
+import 'package:uchikokun_free/rezerooni/register_screen.dart';
 
-class GumdumUC extends StatefulWidget {
-  const GumdumUC({Key? key}) : super(key: key);
+class Rezerooni extends StatefulWidget {
+  const Rezerooni({Key? key}) : super(key: key);
 
   @override
-  _GumdumUCState createState() => _GumdumUCState();
+  _RezerooniState createState() => _RezerooniState();
 }
 
-class _GumdumUCState extends State<GumdumUC> {
+class _RezerooniState extends State<Rezerooni> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('PF 機動戦士ガンダムユニコーン'),
+          title: const Text('P Re:ゼロから始める異世界生活 鬼がかりver.'),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(

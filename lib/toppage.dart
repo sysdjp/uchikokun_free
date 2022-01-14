@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uchikokun_free/gundumuc/gumdumuc.dart';
+import 'package:uchikokun_free/rezerooni/rezerooni.dart';
 
 class TopPage extends StatelessWidget {
   const TopPage({Key? key}) : super(key: key);
@@ -24,6 +25,20 @@ class TopPage extends StatelessWidget {
                     MaterialPageRoute(
                         fullscreenDialog: true,
                         builder: (context) => GumdumUC()));
+              },
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Image.asset('images/rezerooni.jpg'),
+              title: const Text('P Re:ゼロから始める異世界生活 鬼がかりver.'),
+              subtitle: Text('大都'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        fullscreenDialog: true,
+                        builder: (context) => Rezerooni()));
               },
             ),
           ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uchikokun_free/gundumuc/edit_screen.dart';
 import 'package:uchikokun_free/gundumuc/status_info.dart';
-import 'package:uchikokun_free/gundumuc/sum_info.dart';
+import 'package:uchikokun_free/common/sum_info.dart';
 
 class PageSumDetail extends StatefulWidget {
   const PageSumDetail({Key? key}) : super(key: key);
@@ -26,8 +26,6 @@ class _PageSumDetailState extends State<PageSumDetail> {
           _value = sumList[index].jyoutai;
           return GestureDetector(
             onTap: () {
-              //TODO
-              print('GestureDetector tapped $index');
               Navigator.push(
                 this.context,
                 MaterialPageRoute(

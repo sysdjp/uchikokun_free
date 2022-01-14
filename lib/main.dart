@@ -5,9 +5,10 @@ import 'package:uchikokun_free/toppage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
-  //AdManager().initAdmob;
+  // MobileAds.instance.initialize();
+  AdManager().initAdmob;
   AdManager().initInterstitialAd();
+  AdManager().loadInterstitialAd();
   runApp(const MyApp());
 }
 

@@ -80,7 +80,8 @@ class AdManager {
     if (Platform.isAndroid) {
       return "ca-app-pub-7767805284305443~4342365886";
     } else if (Platform.isIOS) {
-      return "<YOUR_IOS_ADMOB_APP_ID>";
+      return "ca-app-pub-7767805284305443~2417391184";
+//      return "ca-app-pub-3940256099942544/5662855259"; //テスト用
     } else {
       throw new UnsupportedError("Unsupported platform");
     }
@@ -90,7 +91,7 @@ class AdManager {
     if (Platform.isAndroid) {
       return "ca-app-pub-7767805284305443/5463875861";
     } else if (Platform.isIOS) {
-      return "<YOUR_IOS_BANNER_AD_UNIT_ID>";
+      return "ca-app-pub-3940256099942544/2934735716"; //テスト用
     } else {
       throw new UnsupportedError("Unsupported platform");
     }
@@ -101,7 +102,8 @@ class AdManager {
       // return "ca-app-pub-3940256099942544/1033173712"; //テスト用
       return "ca-app-pub-7767805284305443/6594599482";
     } else if (Platform.isIOS) {
-      return "<YOUR_IOS_INTERSTITIAL_AD_UNIT_ID>";
+      return "ca-app-pub-7767805284305443/8408084469";
+//      return "ca-app-pub-3940256099942544/4411468910";  //テスト用
     } else {
       throw new UnsupportedError("Unsupported platform");
     }

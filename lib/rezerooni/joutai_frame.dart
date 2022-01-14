@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uchikokun_free/gundumuc/register_screen.dart';
-import 'package:uchikokun_free/gundumuc/status_info.dart';
-import 'package:uchikokun_free/common/sum_info.dart';
+import 'package:uchikokun_free/rezerooni/register_screen.dart';
+import 'package:uchikokun_free/rezerooni/status_info.dart';
 
 class JyotaiFrame extends StatefulWidget {
   final int length;

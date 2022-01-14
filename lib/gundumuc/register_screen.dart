@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uchikokun_free/gundumuc/joutai_frame.dart';
-import 'package:uchikokun_free/gundumuc/sum_info.dart';
+import 'package:uchikokun_free/common/sum_info.dart';
 
 class RegisterScreen extends StatefulWidget {
   static int hozon = 0;

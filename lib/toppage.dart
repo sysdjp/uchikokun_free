@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uchikokun_free/gundumuc/gumdumuc.dart';
+import 'package:uchikokun_free/hokutomusou/hokutomusou.dart';
 import 'package:uchikokun_free/rezerooni/rezerooni.dart';
 
 class TopPage extends StatelessWidget {
@@ -32,13 +33,27 @@ class TopPage extends StatelessWidget {
             child: ListTile(
               leading: Image.asset('images/rezerooni.jpg'),
               title: const Text('P Re:ゼロから始める異世界生活 鬼がかりver.'),
-              subtitle: Text('大都'),
+              subtitle: Text('大都技研'),
               onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         fullscreenDialog: true,
                         builder: (context) => Rezerooni()));
+              },
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Image.asset('images/hokutomusou.jpg'),
+              title: const Text('ぱちんこCR真・北斗無双'),
+              subtitle: Text('Sammy'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        fullscreenDialog: true,
+                        builder: (context) => Hokutomusou()));
               },
             ),
           ),

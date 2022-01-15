@@ -4,14 +4,14 @@ import 'package:uchikokun_free/hokutomusou/page_sum_detail.dart';
 import 'package:uchikokun_free/hokutomusou/page_sum_header.dart';
 import 'package:uchikokun_free/hokutomusou/register_screen.dart';
 
-class hokutomusou extends StatefulWidget {
-  const hokutomusou({Key? key}) : super(key: key);
+class Hokutomusou extends StatefulWidget {
+  const Hokutomusou({Key? key}) : super(key: key);
 
   @override
-  _hokutomusouState createState() => _hokutomusouState();
+  _HokutomusouState createState() => _HokutomusouState();
 }
 
-class _hokutomusouState extends State<hokutomusou> {
+class _HokutomusouState extends State<Hokutomusou> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

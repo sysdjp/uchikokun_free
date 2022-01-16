@@ -28,7 +28,7 @@ class PageSumHeader extends StatelessWidget {
                   style: TextStyle(fontSize: 14),
                 ),
                 Text(
-                  '大当たり確率： 約1/319.6⇨',
+                  '大当たり確率： 約1/319.6',
                   style: TextStyle(fontSize: 14),
                 ),
                 Text(

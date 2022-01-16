@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uchikokun_free/gundumuc/gumdumuc.dart';
 import 'package:uchikokun_free/hokutomusou/hokutomusou.dart';
 import 'package:uchikokun_free/rezerooni/rezerooni.dart';
+import 'package:uchikokun_free/toaru/toaru.dart';
 
 class TopPage extends StatelessWidget {
   const TopPage({Key? key}) : super(key: key);
@@ -54,6 +55,19 @@ class TopPage extends StatelessWidget {
                     MaterialPageRoute(
                         fullscreenDialog: true,
                         builder: (context) => Hokutomusou()));
+              },
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Image.asset('images/toaru.jpg'),
+              title: const Text('Pとある魔術の禁書目録'),
+              subtitle: Text('JFJ'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        fullscreenDialog: true, builder: (context) => Toaru()));
               },
             ),
           ),

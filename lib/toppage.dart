@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:uchikokun_free/gundumuc/gumdumuc.dart';
 import 'package:uchikokun_free/hokutomusou/hokutomusou.dart';
+import 'package:uchikokun_free/keiji3/keiji3.dart';
 import 'package:uchikokun_free/rezerooni/rezerooni.dart';
+import 'package:uchikokun_free/rupan219/rupan219.dart';
 import 'package:uchikokun_free/toaru/toaru.dart';
 
 class TopPage extends StatelessWidget {
@@ -68,6 +70,34 @@ class TopPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         fullscreenDialog: true, builder: (context) => Toaru()));
+              },
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Image.asset('images/rupan219.jpg'),
+              title: const Text('Pルパン三世～復活のマモー～219ver.'),
+              subtitle: Text('平和'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        fullscreenDialog: true,
+                        builder: (context) => rupan219()));
+              },
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Image.asset('images/keiji3.jpg'),
+              title: const Text('P真・花の慶次3'),
+              subtitle: Text('ニューギン'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        fullscreenDialog: true,
+                        builder: (context) => Keiji3()));
               },
             ),
           ),

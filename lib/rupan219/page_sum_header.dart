@@ -11,7 +11,7 @@ class PageSumHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Image.asset(
-            'images/toaru.jpg',
+            'images/rupan219.jpg',
             width: 100,
           ),
           Padding(
@@ -20,31 +20,31 @@ class PageSumHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const <Widget>[
                 Text(
-                  'メーカー：JFJ',
+                  'メーカー：平和',
                   style: TextStyle(fontSize: 14),
                 ),
                 Text(
-                  '大当たり確率： 約1/319.6',
+                  '大当たり確率： 約1/219.9',
                   style: TextStyle(fontSize: 14),
                 ),
                 Text(
-                  '大当たり確率： 　⇨約1/99.9',
+                  '大当たり確率： 　⇨約1/53.1',
                   style: TextStyle(fontSize: 14),
                 ),
                 Text(
-                  'ST突入率: 100%',
+                  'ST突入率: 51%',
                   style: TextStyle(fontSize: 12),
                 ),
                 Text(
-                  'ST回転数: 大当り後154回',
+                  'ST回転数: 大当り後88回',
                   style: TextStyle(fontSize: 12),
                 ),
                 Text(
-                  '平均連チャン数： 約4.7回',
+                  '平均連チャン数： 約3.9回',
                   style: TextStyle(fontSize: 12),
                 ),
                 Text(
-                  'ボーダー： 約17.4回転/1K(等価交換)',
+                  'ボーダー： 約18.5回転/1K(等価交換)',
                   style: TextStyle(fontSize: 12),
                 ),
               ],

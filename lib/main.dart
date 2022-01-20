@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: '一人で打ち子くん',
       theme: ThemeData.dark(), //← これでダークテーマ固定
       home: const TopPage(),
     );

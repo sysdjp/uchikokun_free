@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uchikokun_free/common/sum_info.dart';
-import 'package:uchikokun_free/keiji3/joutai_frame.dart';
+import 'package:uchikokun_free/Symphogear2/joutai_frame.dart';
 
 class RegisterScreen extends StatefulWidget {
   static int hozon = 0;
@@ -195,7 +195,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           // 開始・終了回転数
                           _startkaiten = int.parse(sumList[i].startKaiten);
                           _endkaiten = int.parse(sumList[i].endKaiten);
-                          if (sumList[i].jyoutai < 3) {
+                          if (sumList[i].jyoutai < 2) {
                             //今回回転数
                             _konkaikaitensu = (_endkaiten - _startkaiten);
                             //累計通常回転数
@@ -212,7 +212,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           }
                         }
 
-                        if (RegisterScreen.hozon < 3) {
+                        if (RegisterScreen.hozon < 2) {
                           //今回回転数
                           _konkaikaitensu =
                               int.parse(endKaitenTextEditing.text) -
